@@ -1,0 +1,9 @@
+node_modules/
+.vscode/
+dist/
+public/static/
+public/assets/
+public/.cache/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
