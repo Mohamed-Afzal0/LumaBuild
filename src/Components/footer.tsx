@@ -1,4 +1,5 @@
-import "./objects.css"
+import "./objects.css";
+import logo from '../assets/logo.svg';
 
 const Footer = () => {
   return (
@@ -17,14 +18,12 @@ const Footer = () => {
 
       <footer className="footer">
         <div className="footer-content">
-
           <div className="footer-brand">
             <div className="footer-logo">
-              L
+              <img src={logo} alt="LumaBuild" height="60" width="60" />
             </div>
-
             <h3>LumaBuild</h3>
-
+            <br />
             <p>
               Calm, practical interiors and renovations.
               A fictional studio created for a practice project.

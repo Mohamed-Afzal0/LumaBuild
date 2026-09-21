@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+  <!-- Rounded Box Background -->
+  <rect 
+    width="60" 
+    height="60" 
+    rx="16" 
+    ry="16" 
+    fill="#112712" 
+  />
+  
+  <!-- Centered White "L" -->
+  <text 
+    x="50%" 
+    y="50%" 
+    text-anchor="middle" 
+    dominant-baseline="central" 
+    fill="#FFFFFF" 
+    font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+    font-size="30" 
+    font-weight="200"
+  >
+    L
+  </text>
+</svg>

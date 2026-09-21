@@ -1,11 +1,15 @@
 import './objects.css';
+import logo from '../assets/logo.svg';
 
 const Header = () => {
   return (
     <header className="header">
-      <a className="logo" href="/" aria-label="LumaBuild home">
-        LumaBuild
-      </a>
+      <div className="logo-container">
+        <a className="logo" href="/" aria-label="LumaBuild home">
+          <img src={logo} alt="LumaBuild" height="30" width="30" />
+        </a>
+        <span className="logo-text">LumaBuild</span>
+      </div>
       <nav className="navigation" aria-label="Main navigation">
         <ul>
           <li>

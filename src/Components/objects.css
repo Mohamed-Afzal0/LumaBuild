@@ -11,8 +11,26 @@
   border-bottom: 1px solid rgb(255 255 255 / 12%);
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
   justify-self: start;
+  color: inherit;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.logo img {
+  height: 30px; /* Adjusted to match the text height */
+}
+
+.logo-text {
   color: inherit;
   font-size: 1.25rem;
   font-weight: 700;
@@ -46,8 +64,8 @@
 .consultation-button {
   justify-self: end;
   border: 1px solid rgb(255 255 255 / 30%);
-  border-radius: 999px;
-  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
   color: inherit;
   background: transparent;
   cursor: pointer;
@@ -100,9 +118,10 @@
 .footer-cta-content h2 {
   color: white;
   font-size: 64px;
+  line-height: 1.2;
 }
 
-.footer-cta-content button {
+.footer-cta button {
   background: #dca03a;
   border: none;
   color: white;
@@ -112,7 +131,91 @@
   cursor: pointer;
 }
 
+.footer-cta button:hover {
+  background: #a0802a;
+}
+
 .footer {
   background: #18373e;
   padding: 60px 40px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo img {
+  height: 60px;
+  width: 60px;
+}
+
+.footer-brand h3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: #ddd;
+}
+
+.footer-links {
+  flex: 1;
+}
+
+.footer-links h4 {
+  color: #ddd;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  color: #ddd;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.footer-contact {
+  flex: 1;
+}
+
+.footer-contact h4 {
+  color: #ddd;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.footer-contact p {
+  color: #ddd;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  color: #ddd;
+  font-size: 14px;
 }
