@@ -1,4 +1,5 @@
 import "./Pages.css";
+import ScrollReveal from "../components/ScrollReveal";
 
 const About = () => {
   const steps = [
@@ -31,21 +32,25 @@ const About = () => {
   return (
     <section id="about" className="about-section">
       <div className="about-container">
-        <h2>How it works</h2>
+        <ScrollReveal>
+          <h2>How it works</h2>
 
-        <p className="about-subtitle">
-          Four clear steps, so you always know what happens next.
-        </p>
+          <p className="about-subtitle">
+            Four clear steps, so you always know what happens next.
+          </p>
+        </ScrollReveal>
 
         <div className="steps-grid">
-          {steps.map((step) => (
-            <div key={step.number} className="step-card">
-              <span>{step.number}</span>
+          {steps.map((step, index) => (
+            <ScrollReveal key={step.number} delay={index * 150}>
+              <div className="step-card">
+                <span>{step.number}</span>
 
-              <h3>{step.title}</h3>
+                <h3>{step.title}</h3>
 
-              <p>{step.description}</p>
-            </div>
+                <p>{step.description}</p>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>
