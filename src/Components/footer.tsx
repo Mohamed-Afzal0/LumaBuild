@@ -4,18 +4,6 @@ import logo from '../assets/logo.svg';
 const Footer = () => {
   return (
     <>
-      <section className="footer-cta">
-        <div className="footer-cta-content">
-          <h2>
-            Ready to plan your
-            <br />
-            space?
-          </h2>
-
-          <button>Book a consultation</button>
-        </div>
-      </section>
-
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-brand">
@@ -34,11 +22,31 @@ const Footer = () => {
             <h4>Pages</h4>
 
             <ul>
-              <li>Home</li>
-              <li>Services</li>
-              <li>Projects</li>
-              <li>About</li>
-              <li>Contact</li>
+              <li>
+                <a href="#home" className="nav-link">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="nav-link">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="#projects" className="nav-link">
+                  Projects
+                </a>
+              </li>
+              <li>
+                <a href="#about" className="nav-link">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="nav-link">
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 

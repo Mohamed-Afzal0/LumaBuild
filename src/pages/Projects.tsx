@@ -1,26 +1,9 @@
-import "./Pages.css";
+import "./Pages.css"
+import projectsData from "../data/projectsData.js"
 
 const Projects = () => {
-  const projects = [
-    {
-      category: "Residential",
-      title: "Harbour View Apartment",
-      location: "Colombo",
-    },
-    {
-      category: "Commercial",
-      title: "Studio Loft Office",
-      location: "Kandy",
-    },
-    {
-      category: "Renovation",
-      title: "Garden House Refresh",
-      location: "Galle",
-    },
-  ];
-
   return (
-    <section className="projects-section">
+    <section id="projects" className="projects-section">
       <div className="projects-container">
         <div className="projects-header">
           <h2>Featured projects</h2>
@@ -32,10 +15,10 @@ const Projects = () => {
         </div>
 
         <div className="projects-grid">
-          {projects.map((project, index) => (
+          {projectsData.map((project: any, index: number) => (
             <div className="project-card" key={index}>
               <div className="project-image">
-                Project image
+                {project.image && <img src={project.image} alt={project.title} />}
               </div>
 
               <span className="project-category">

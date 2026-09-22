@@ -10,28 +10,38 @@ const Header = () => {
         </a>
         <span className="logo-text">LumaBuild</span>
       </div>
-      <nav className="navigation" aria-label="Main navigation">
-        <ul>
-          <li>
-            <a href="#Home">Home</a>
+      <nav className="nav">
+        <ul className="nav-list">
+          <li className="nav-item">
+            <a href="#home" className="nav-link">
+              Home
+            </a>
           </li>
-          <li>
-            <a href="#Services">Services</a>
+          <li className="nav-item">
+            <a href="#services" className="nav-link">
+              Services
+            </a>
           </li>
-          <li>
-            <a href="#Projects">Projects</a>
+          <li className="nav-item">
+            <a href="#projects" className="nav-link">
+              Projects
+            </a>
           </li>
-          <li>
-            <a href="#About">About</a>
+          <li className="nav-item">
+            <a href="#about" className="nav-link">
+              About
+            </a>
           </li>
-          <li>
-            <a href="#Contact">Contact</a>
+          <li className="nav-item">
+            <a href="#contact" className="nav-link">
+              Contact
+            </a>
           </li>
         </ul>
       </nav>
-      <button className="consultation-button" type="button">
+      <a href='#contact' className="consultation-button" type="button">
         Book a consultation
-      </button>
+      </a>
     </header>
   );
 };

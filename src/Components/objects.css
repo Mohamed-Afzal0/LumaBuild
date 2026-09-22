@@ -1,4 +1,13 @@
+/* =======================
+   HEADER
+======================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
 .header {
+  background: #1f4750;
   width: 100%;
   box-sizing: border-box;
   display: grid;
@@ -6,7 +15,6 @@
   align-items: center;
   gap: 2rem;
   padding: 1rem 1.5rem;
-  background: var(--header-bg, #333);
   color: var(--header-text, #fff);
   border-bottom: 1px solid rgb(255 255 255 / 12%);
 }
@@ -38,90 +46,59 @@
   text-decoration: none;
 }
 
-.navigation {
-  justify-self: center;
-}
-
-.navigation ul {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navigation a {
-  color: inherit;
-  font-size: 0.95rem;
-  text-decoration: none;
-}
-
-.logo:hover,
-.navigation a:hover {
-  color: #f7dc6f;
-}
-
-.consultation-button {
-  justify-self: end;
-  border: 1px solid rgb(255 255 255 / 30%);
-  border-radius: 8px;
-  padding: 0.5rem 0.8rem;
-  color: inherit;
-  background: transparent;
-  cursor: pointer;
-  font: inherit;
-}
-
-.consultation-button:hover,
-.consultation-button:focus-visible {
-  border-color: #f7dc6f;
-  color: #f7dc6f;
-}
-
-@media (max-width: 600px) {
-  .header {
-    grid-template-columns: 1fr auto;
-    gap: 1rem;
-    padding: 0.875rem 1rem;
-  }
-
-  .navigation {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    width: 100%;
-  }
-
-  .navigation ul {
-    flex-wrap: wrap;
-    gap: 0.75rem 1rem;
-    justify-content: center;
-  }
-}
-
-/* =======================
-   FOOTER
-======================= */
-
-.footer-cta {
-  background: #1f4750;
-  padding: 100px 40px;
-}
-
-.footer-cta-content {
+.nav {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+  padding: 0 40px;
 }
 
-.footer-cta-content h2 {
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
   color: white;
-  font-size: 64px;
-  line-height: 1.2;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
-.footer-cta button {
+.nav-link:hover,
+.nav-link.active {
+  color: #dca03a;
+}
+
+/* Active state underline */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #dca03a;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.footer-cta-content a {
   background: #dca03a;
   border: none;
   color: white;
@@ -129,11 +106,48 @@
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.footer-cta button:hover {
+.footer-cta-content a:hover {
   background: #a0802a;
 }
+
+.consultation-button {
+  justify-self: end;
+  font: inherit;
+  background: #dca03a;
+  border: none;
+  color: white;
+  padding: 14px 26px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.consultation-button:hover,
+.consultation-button:focus-visible {
+  background: #a0802a;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 24px;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+/* =======================
+   FOOTER
+======================== */
 
 .footer {
   background: #18373e;

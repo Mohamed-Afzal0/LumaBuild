@@ -1,39 +1,25 @@
+// src/pages/Home.tsx
+
 import "./Pages.css";
+import heroImage from "../assets/main-page.jpg";
 
 const Home = () => {
   return (
-    <section className="hero-wrapper">
+    <section id="home" className="hero-wrapper">
       <div className="hero-container">
         <div className="hero-content">
-          <span className="hero-badge">Free consultation</span>
-
-          <h1 className="hero-title">
-            Spaces designed
-            <br />
-            for the way you
-            <br />
-            live.
-          </h1>
-
+          <div className="hero-badge">Free</div>
+          <h1 className="hero-title">Welcome to Lumabuild</h1>
           <p className="hero-description">
-            LumaBuild is a fictional interior-design and renovation studio.
-            We plan, style and deliver calm, practical spaces for homes and
-            small businesses.
+            Transform your space with our expert design and build services.
           </p>
-
           <div className="hero-buttons">
-            <button className="btn btn-primary">
-              Book a consultation
-            </button>
-
-            <button className="btn btn-secondary">
-              View our projects
-            </button>
+            <a href="#contact" className="btn btn-primary">Book a consultation</a>
+            <a href="#projects" className="btn btn-secondary">View all projects</a>
           </div>
         </div>
-
         <div className="hero-image">
-          <span>Hero image</span>
+          <img src={heroImage} alt="LumaBuild project" />
         </div>
       </div>
 
