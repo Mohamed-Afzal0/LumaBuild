@@ -11,7 +11,7 @@ const Home = () => {
       <ScrollReveal>
         <div className="hero-container">
           <div className="hero-content">
-            <div className="hero-badge">Free</div>
+            <div className="hero-badge">Free consultations</div>
             <h1 className="hero-title">Welcome to Lumabuild</h1>
             <p className="hero-description">
               Transform your space with our expert design and build services.
