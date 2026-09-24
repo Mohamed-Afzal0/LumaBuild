@@ -85,6 +85,7 @@
 
 .btn-primary:hover {
   background: #1d463e;
+  color: rgba(255, 255, 255, 0.778);
 }
 
 .btn-secondary {
@@ -525,6 +526,115 @@
 
 .form-field textarea {
   resize: vertical;
+}
+
+.form-field textarea:focus {
+  border-color: #24554c;
+}
+
+/* REQUIRED/OPTIONAL LABELS */
+.required {
+  color: #c94040;
+}
+
+.optional {
+  color: #888;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+/* INPUT ERROR STATES */
+.input-error {
+  border-color: #c94040 !important;
+  background-color: #fef5f5 !important;
+}
+
+.input-error:focus {
+  border-color: #a83232 !important;
+}
+
+.form-error {
+  color: #c94040;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* SUCCESS MESSAGE */
+.form-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(36, 85, 76, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.25);
+  padding: 48px 32px;
+  min-height: 400px;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-icon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, #24554c 0%, #1d463e 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: white;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(36, 85, 76, 0.35);
+}
+
+.form-success h3 {
+  font-size: 28px;
+  color: #1f2423;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.form-success > p {
+  color: #636866;
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 400px;
+  margin-bottom: 12px;
+}
+
+.success-note {
+  font-size: 13px !important;
+  color: #888 !important;
+  font-style: italic;
+  margin-top: 8px !important;
+  margin-bottom: 28px !important;
+}
+
+.form-success .btn {
+  margin-top: 8px;
+}
+
+/* DISABLED BUTTON STATE */
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
 }
 
 /* CONTACT DETAILS */

@@ -76,7 +76,46 @@ npm run preview
 
 # Run linter
 npm run lint
+
 ```
+## 🚀 Quick Start Docker Edition
+
+### Development (Hot Reload)
+
+```bash
+docker compose -f docker-compose.dev.yml up --build
+# Access at http://localhost:5173
+```
+
+### Production
+
+```bash
+docker build -t lumabuild:latest .
+docker run -d -p 80:80 --name lumabuild lumabuild:latest
+# Access at http://localhost:80
+```
+
+## 🏗️ Architecture
+
+### Production Build Pipeline
+
+Multi-stage build reduces image from 500MB to 50MB:
+
+```
+Stage 1: Builder (Node 22 Alpine)
+├─ npm install
+├─ npm run build
+└─ Output: dist/
+
+Stage 2: Runtime (Nginx Alpine)  
+├─ Copy dist/
+├─ Configure Nginx
+└─ Serve files
+
+Result: ~50MB optimized image
+```
+> For more information about the Docker Setup
+> [Read the setup guide](DOCKER_SETUP.md)
 
 ## 📱 Responsive Breakpoints
 
