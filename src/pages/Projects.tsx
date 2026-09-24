@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Pages.css";
-import projectsData from "../data/projectsData.js";
+import projectsData from "../data/projectsData";
+import type { Project } from "../data/projectsData";
 import ScrollReveal from "../components/ScrollReveal";
 import Lightbox from "../components/Lightbox";
 
@@ -23,10 +24,10 @@ const Projects = () => {
 
         <ScrollReveal delay={200}>
           <div className="projects-grid">
-            {projectsData.map((project: any, index: number) => (
+            {projectsData.map((project: Project) => (
               <div
                 className="project-card"
-                key={index}
+                key={project.id}
                 onClick={() => setLightboxImage({ image: project.image, title: project.title })}
                 role="button"
                 tabIndex={0}
@@ -38,7 +39,7 @@ const Projects = () => {
                 aria-label={"View " + project.title}
               >
                 <div className="project-image">
-                  {project.image && <img src={project.image} alt={project.title} />}
+                  <img src={project.image} alt={project.title} loading={project.id === 1 ? "eager" : "lazy"} />
                 </div>
 
                 <span className="project-category">

@@ -1,10 +1,10 @@
-import Header from './Components/header.tsx'
-import Home from './pages/Home.tsx'
-import Services from './pages/Services.tsx'
-import Projects from './pages/Projects.tsx'
-import About from './pages/About.tsx'
-import Contact from './pages/Contact.tsx'
-import Footer from './Components/footer.tsx'
+import Header from './components/Header'
+import Home from './pages/Home'
+import Services from './pages/Services'
+import Projects from './pages/Projects'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Footer from './components/Footer'
 import './App.css'
 
 function App() {

@@ -1,6 +1,7 @@
-import "./Pages.css"
-import servicesData from "../data/servicesData.js"
-import ScrollReveal from "../components/ScrollReveal"
+import "./Pages.css";
+import servicesData from "../data/servicesData";
+import type { Service } from "../data/servicesData";
+import ScrollReveal from "../components/ScrollReveal";
 
 const Services = () => {
   return (
@@ -12,6 +13,7 @@ const Services = () => {
             <h2>What we do</h2>
 
             <p>
+              Transform your space with thoughtful interior design and renovation planning.
               From a single room to a full renovation, we handle the
               planning, the styling and the details.
             </p>
@@ -20,8 +22,8 @@ const Services = () => {
 
         <ScrollReveal delay={200}>
           <div className="services-grid">
-            {servicesData.map((service: any, index: number) => (
-              <div className="service-card" key={index}>
+            {servicesData.map((service: Service) => (
+              <div className="service-card" key={service.id}>
 
                 <div className="service-icon">
                   {service.icon}

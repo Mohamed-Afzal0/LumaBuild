@@ -1,32 +1,154 @@
-# React + TypeScript + Vite
+# LumaBuild
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive React concept website for a fictional interior design and renovation studio.
 
-Currently, two official plugins are available:
+![LumaBuild](./src/assets/ScreenShots/home_page.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🎯 Live Demo
 
-## React Compiler
+> Add your deployed URL here when ready
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the Oxlint configuration
+- **Fully Responsive Design** - Optimized for mobile (320px+), tablet (768px+), and desktop (1024px+)
+- **React Router Navigation** - Smooth single-page application experience
+- **TypeScript Throughout** - Type-safe codebase with strict typing
+- **Modern Design System** - CSS variables, custom properties, and consistent styling
+- **Scroll Reveal Animations** - Intersection Observer-based animations
+- **Project Lightbox** - Click to view project details in fullscreen
+- **Validated Contact Form** - Client-side validation with error handling
+- **Accessibility Focused** - ARIA labels, keyboard navigation, focus states
+- **Performance Optimized** - Lazy loading images, optimized assets
+- **SEO Ready** - Meta tags, Open Graph, semantic HTML
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## 🛠 Tech Stack
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- **React 19.2.8** - Latest React with modern hooks
+- **TypeScript 6.0.2** - Static typing for better DX
+- **Vite 8.3.0** - Lightning-fast dev server and build tool
+- **React Router DOM 7.18.4** - Client-side routing
+- **Oxlint** - Fast Rust-based linting
+- **CSS3** - Modern CSS with custom properties
+
+## 📁 Project Structure
+
+```
+LumaBuild/
+├── src/
+│   ├── components/        # Reusable components
+│   │   ├── Header.tsx     # Navigation header
+│   │   ├── Footer.tsx     # Footer with links
+│   │   ├── Counter.tsx    # Animated number counter
+│   │   ├── Lightbox.tsx   # Image lightbox modal
+│   │   └── ScrollReveal.tsx # Scroll animation wrapper
+│   ├── pages/            # Page components
+│   │   ├── Home.tsx      # Landing page
+│   │   ├── Services.tsx  # Services showcase
+│   │   ├── Projects.tsx  # Project portfolio
+│   │   ├── About.tsx     # Process steps
+│   │   ├── Contact.tsx   # Contact form
+│   │   └── NotFound.tsx  # 404 page
+│   ├── data/             # TypeScript data files
+│   │   ├── projectsData.ts
+│   │   └── servicesData.ts
+│   ├── assets/           # Images and SVGs
+│   ├── App.tsx           # Root component
+│   ├── main.tsx          # Entry point
+│   └── index.css         # Global styles
+├── public/               # Static assets
+└── package.json
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## 🚀 Installation & Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Run linter
+npm run lint
+```
+
+## 📱 Responsive Breakpoints
+
+The design is optimized for these breakpoints:
+
+- **Mobile**: 320px, 375px, 390px
+- **Tablet**: 768px
+- **Laptop**: 1024px
+- **Desktop**: 1440px+
+
+## ♿ Accessibility Features
+
+- Semantic HTML5 elements
+- ARIA labels and roles
+- Keyboard navigation support
+- Focus visible styles
+- Alt text for all images
+- Form labels and error messages
+- Skip to content link
+- Color contrast compliant
+
+## 🎨 Design System
+
+The project uses a comprehensive design system with CSS variables:
+
+### Colors
+- Primary: `#1f5558` - Deep teal
+- Accent: `#e4a72c` - Warm gold
+- Background: `#f7f5f0` - Soft cream
+- Text: `#182124` - Near black
+
+### Typography
+- Headings: Playfair Display (serif)
+- Body: DM Sans (sans-serif)
+- Responsive scaling with `clamp()`
+
+### Components
+- Consistent spacing scale
+- Reusable button styles
+- Form validation patterns
+- Animation utilities
+
+## ⚠️ Important Note
+
+**This is a fictional portfolio project.**
+
+- Brand name "LumaBuild" is created for demonstration purposes
+- All project images, statistics, and testimonials are fictional
+- Contact information is placeholder data (no actual email/phone)
+- The contact form is client-side only (no backend)
+- Project locations and details are conceptual examples
+
+This project demonstrates modern React development practices, responsive design, accessibility standards, and TypeScript usage.
+
+## 📄 License
+
+This is a practice/portfolio project. Feel free to use it as inspiration for your own work.
+
+## 🤝 Contributing
+
+This is a demonstration project, but suggestions and improvements are welcome!
+
+## 📸 Screenshots
+
+> Add screenshots here showing:
+> - Desktop homepage
+> - Mobile responsive view
+> - Contact form validation
+> - Project lightbox
+> - Services grid
+
+---
+
+**Built with ❤️ as a demonstration of modern web development practices**
+

@@ -1,4 +1,4 @@
-import './objects.css';
+import './components.css';
 import logo from '../assets/logo.svg';
 
 const Header = () => {

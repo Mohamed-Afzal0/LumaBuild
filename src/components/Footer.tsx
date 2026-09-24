@@ -1,6 +1,7 @@
-import "./objects.css";
+import "./Footer.css";
+import "./components.css";
 import logo from "../assets/logo.svg";
-import ScrollReveal from "../components/ScrollReveal";
+import ScrollReveal from "./ScrollReveal";
 
 const Footer = () => {
   return (
