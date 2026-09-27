@@ -1,5 +1,3 @@
-// src/pages/Home.tsx
-
 import "./Pages.css";
 import heroImage from "../assets/main-page.jpg";
 import ScrollReveal from "../components/ScrollReveal";
@@ -12,12 +10,12 @@ const Home = () => {
         <div className="hero-container">
           <div className="hero-content">
             <div className="hero-badge">Free consultations</div>
-            <h1 className="hero-title">Welcome to Lumabuild</h1>
+            <h1 className="hero-title">Welcome to LumaBuild</h1>
             <p className="hero-description">
               Transform your space with our expert design and build services.
             </p>
             <div className="hero-buttons">
-              <a href="#contact" className="btn btn-primary btn-animated btn-animated-dark">Book a consultation</a>
+              <a href="#contact" className="btn btn-primary btn-animated btn-animated-primary">Book a consultation</a>
               <a href="#projects" className="btn btn-secondary btn-animated">View all projects</a>
             </div>
           </div>

@@ -134,7 +134,7 @@ const Contact = () => {
                   </p>
                   <button
                     type="button"
-                    className="btn btn-primary btn-animated btn-animated-dark"
+                    className="btn btn-teal-dark btn-animated"
                     onClick={() => setIsSubmitted(false)}
                   >
                     Send another message
@@ -222,7 +222,7 @@ const Contact = () => {
 
                   <button
                     type="submit"
-                    className="btn btn-primary btn-animated btn-animated-dark"
+                    className="btn btn-teal-dark btn-animated"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Sending..." : "Send message"}

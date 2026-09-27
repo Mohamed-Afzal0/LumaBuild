@@ -2,21 +2,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Color System */
-  --color-primary: #1f5558;
-  --color-primary-dark: #163f42;
-  --color-accent: #e4a72c;
-  --color-accent-hover: #c89033;
-  --color-background: #f7f5f0;
-  --color-surface: #ffffff;
-  --color-text: #182124;
-  --color-text-muted: #6c7473;
-  --color-border: #e4e1d9;
+  /* Brand Core Tokens */
+  --teal-900: #112712;
+  --teal-700: #1F4A28;
+  --teal-100: #E4EBE3;
+  --gold-500: #E8A93A;
+  --gold-600: #C98F26;
+  --cream-50: #E8E4D9;
+  --cream-100: #F2EEE4;
+  --beige-100: #EFEAE0;
+  --border-soft: #E2DCCB;
+  --ink-900: #1A1A17;
+  --ink-500: #6B6660;
+  --cream-text-soft: #D9C9A3;
+  --teal-legal: #8C9E8E;
+  
+  /* Semantic Aliases */
+  --color-primary: var(--teal-900);
+  --color-primary-mid: var(--teal-700);
+  --color-accent: var(--gold-500);
+  --color-accent-hover: var(--gold-600);
+  --color-background: var(--cream-50);
+  --color-background-alt: var(--beige-100);
+  --color-surface: var(--cream-100);
+  --color-border: var(--border-soft);
+  --color-icon-circle: var(--teal-100);
+  --color-text: var(--ink-900);
+  --color-text-muted: var(--ink-500);
+  --color-teal-text: var(--cream-text-soft);
   
   /* Header & Footer Colors */
-  --color-header-bg: #1f4750;
-  --color-footer-bg: #18373e;
-  --color-footer-text: #ddd;
+  --color-header-bg: var(--teal-900);
+  --color-footer-bg: var(--teal-900);
+  --color-footer-text: var(--cream-text-soft);
   
   /* Typography */
   --font-heading: 'Playfair Display', Georgia, serif;

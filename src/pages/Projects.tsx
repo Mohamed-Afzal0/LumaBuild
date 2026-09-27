@@ -56,7 +56,15 @@ const Projects = () => {
 
         <ScrollReveal delay={400}>
           <div className="projects-button">
-            <button className="btn-animated btn-animated-dark">View all projects</button>
+            <button
+              type="button"
+              className="btn-animated btn-animated-dark"
+              onClick={() => {
+                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              View all projects
+            </button>
           </div>
         </ScrollReveal>
       </div>

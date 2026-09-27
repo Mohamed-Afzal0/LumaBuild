@@ -11,13 +11,13 @@ const NotFound = () => {
           or is temporarily unavailable.
         </p>
         <div className="not-found-actions">
-          <a href="/" className="btn btn-primary btn-animated btn-animated-dark">
+          <a href="/" className="btn btn-primary btn-animated btn-animated-primary">
             Back to home
           </a>
-          <a href="#projects" className="btn btn-primary btn-animated btn-animated-dark">
+          <a href="#projects" className="btn btn-secondary btn-animated">
             View projects
           </a>
-          <a href="#contact" className="btn btn-primary btn-animated btn-animated-dark">
+          <a href="#contact" className="btn btn-secondary btn-animated">
             Contact us
           </a>
         </div>

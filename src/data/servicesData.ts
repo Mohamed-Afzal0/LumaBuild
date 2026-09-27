@@ -1,6 +1,6 @@
 export interface Service {
   id: number;
-  icon: string;
+  iconType: "residential" | "commercial" | "renovation" | "styling";
   title: string;
   description: string;
 }
@@ -8,28 +8,28 @@ export interface Service {
 export const Services: Service[] = [
   {
     id: 1,
-    icon: "🏠",
+    iconType: "residential",
     title: "Residential interiors",
     description:
       "Living rooms, kitchens and bedrooms designed around how you actually live.",
   },
   {
     id: 2,
-    icon: "🏢",
+    iconType: "commercial",
     title: "Commercial spaces",
     description:
       "Cafes, studios and small offices that feel welcoming and work hard.",
   },
   {
     id: 3,
-    icon: "📐",
+    iconType: "renovation",
     title: "Renovation planning",
     description:
       "Layouts, budgets and schedules sorted before the first wall comes down.",
   },
   {
     id: 4,
-    icon: "⭐",
+    iconType: "styling",
     title: "Custom styling",
     description:
       "Furniture, lighting and finishing touches picked to suit your space.",
