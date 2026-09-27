@@ -12,7 +12,7 @@ const renderServiceIcon = (type: Service["iconType"]) => {
           height="26"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#1F4A28"
+          stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -29,7 +29,7 @@ const renderServiceIcon = (type: Service["iconType"]) => {
           height="26"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#1F4A28"
+          stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -52,7 +52,7 @@ const renderServiceIcon = (type: Service["iconType"]) => {
           height="26"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#1F4A28"
+          stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -74,7 +74,7 @@ const renderServiceIcon = (type: Service["iconType"]) => {
           height="26"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#1F4A28"
+          stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -105,10 +105,10 @@ const Services = () => {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={200}>
-          <div className="services-grid">
-            {servicesData.map((service: Service) => (
-              <div className="service-card" key={service.id}>
+        <div className="services-grid">
+          {servicesData.map((service: Service, index: number) => (
+            <ScrollReveal key={service.id} delay={index * 120} duration={750}>
+              <div className="service-card">
                 <div className="service-icon">
                   {renderServiceIcon(service.iconType)}
                 </div>
@@ -131,9 +131,9 @@ const Services = () => {
                   <span className="button-text">Learn More</span>
                 </button>
               </div>
-            ))}
-          </div>
-        </ScrollReveal>
+            </ScrollReveal>
+          ))}
+        </div>
       </div>
     </section>
   );

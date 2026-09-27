@@ -6,8 +6,8 @@ import Counter from "../components/Counter";
 const Home = () => {
   return (
     <section id="home" className="hero-wrapper">
-      <ScrollReveal>
-        <div className="hero-container">
+      <div className="hero-container">
+        <ScrollReveal direction="up" delay={50} duration={800}>
           <div className="hero-content">
             <div className="hero-badge">Free consultations</div>
             <h1 className="hero-title">Welcome to LumaBuild</h1>
@@ -19,30 +19,37 @@ const Home = () => {
               <a href="#projects" className="btn btn-secondary btn-animated">View all projects</a>
             </div>
           </div>
+        </ScrollReveal>
+        
+        <ScrollReveal direction="fade" delay={200} duration={900}>
           <div className="hero-image">
             <img src={heroImage} alt="LumaBuild project" />
           </div>
-        </div>
-      </ScrollReveal>
+        </ScrollReveal>
+      </div>
 
-      <ScrollReveal delay={200}>
-        <div className="stats-section">
+      <div className="stats-section">
+        <ScrollReveal delay={100} duration={750}>
           <div className="stat">
             <h2><Counter target={120} suffix="+" duration={2000} /></h2>
             <p>Projects completed</p>
           </div>
+        </ScrollReveal>
 
+        <ScrollReveal delay={220} duration={750}>
           <div className="stat">
             <h2><Counter target={8} suffix=" years" duration={1800} /></h2>
             <p>Of experience</p>
           </div>
+        </ScrollReveal>
 
+        <ScrollReveal delay={340} duration={750}>
           <div className="stat">
             <h2><Counter target={4.9} suffix="/5" decimals={1} duration={2200} /></h2>
             <p>Client rating</p>
           </div>
-        </div>
-      </ScrollReveal>
+        </ScrollReveal>
+      </div>
     </section>
   );
 };

@@ -142,10 +142,11 @@ The design is optimized for these breakpoints:
 The project uses a comprehensive design system with CSS variables:
 
 ### Colors
-- Primary: `#1f5558` - Deep teal
-- Accent: `#e4a72c` - Warm gold
-- Background: `#f7f5f0` - Soft cream
-- Text: `#182124` - Near black
+- Primary: `#16393e` / `#10272b` - Deep architectural oceanic teal
+- Accent: `#d49a3d` - Warm brushed brass & gold
+- Background: `#faf8f5` - Warm linen alabaster
+- Surface Alt: `#f3efe8` - Warm travertine stone
+- Text: `#192224` - Refined charcoal teal
 
 ### Typography
 - Headings: Playfair Display (serif)

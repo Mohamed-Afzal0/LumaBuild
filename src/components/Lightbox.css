@@ -53,7 +53,7 @@
 
 .lightbox-close:hover,
 .lightbox-close:focus-visible {
-  color: #E8A93A;
+  color: var(--color-accent, #d49a3d);
   transform: rotate(90deg);
 }
 

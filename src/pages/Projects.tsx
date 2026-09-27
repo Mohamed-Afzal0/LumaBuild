@@ -22,12 +22,11 @@ const Projects = () => {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal delay={200}>
-          <div className="projects-grid">
-            {projectsData.map((project: Project) => (
+        <div className="projects-grid">
+          {projectsData.map((project: Project, index: number) => (
+            <ScrollReveal key={project.id} delay={index * 120} duration={750}>
               <div
                 className="project-card"
-                key={project.id}
                 onClick={() => setLightboxImage({ image: project.image, title: project.title })}
                 role="button"
                 tabIndex={0}
@@ -50,9 +49,9 @@ const Projects = () => {
 
                 <p>{project.location}</p>
               </div>
-            ))}
-          </div>
-        </ScrollReveal>
+            </ScrollReveal>
+          ))}
+        </div>
 
         <ScrollReveal delay={400}>
           <div className="projects-button">

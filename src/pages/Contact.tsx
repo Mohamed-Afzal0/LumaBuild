@@ -35,11 +35,12 @@ const Contact = () => {
         if (!value.trim()) return "Name is required";
         if (value.trim().length < 2) return "Name must be at least 2 characters";
         break;
-      case "email":
+      case "email": {
         if (!value.trim()) return "Email is required";
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) return "Please enter a valid email address";
         break;
+      }
       case "subject":
         if (!value.trim()) return "Subject is required";
         if (value.trim().length < 3) return "Subject must be at least 3 characters";
@@ -134,7 +135,7 @@ const Contact = () => {
                   </p>
                   <button
                     type="button"
-                    className="btn btn-teal-dark btn-animated"
+                    className="btn btn-primary btn-animated"
                     onClick={() => setIsSubmitted(false)}
                   >
                     Send another message
@@ -154,7 +155,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        placeholder="Your name"
+                        placeholder="Enter your name"
                         className={errors.name && touched.name ? "input-error" : ""}
                       />
                       {errors.name && touched.name && (
@@ -173,7 +174,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        placeholder="your@email.com"
+                        placeholder="Enter your email (e.g. name@example.com)"
                         className={errors.email && touched.email ? "input-error" : ""}
                       />
                       {errors.email && touched.email && (
@@ -193,7 +194,7 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      placeholder="What is this about?"
+                      placeholder="Enter project type or subject"
                       className={errors.subject && touched.subject ? "input-error" : ""}
                     />
                     {errors.subject && touched.subject && (
@@ -212,7 +213,7 @@ const Contact = () => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       rows={6}
-                      placeholder="Tell us about your space, your vision, and what you're hoping to achieve..."
+                      placeholder="Tell us about your space, your vision, timeline, and what you're hoping to achieve..."
                       className={errors.message && touched.message ? "input-error" : ""}
                     />
                     {errors.message && touched.message && (
@@ -222,7 +223,7 @@ const Contact = () => {
 
                   <button
                     type="submit"
-                    className="btn btn-teal-dark btn-animated"
+                    className="btn btn-primary btn-animated"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Sending..." : "Send message"}

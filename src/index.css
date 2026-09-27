@@ -2,39 +2,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Brand Core Tokens */
-  --teal-900: #112712;
-  --teal-700: #1F4A28;
-  --teal-100: #E4EBE3;
-  --gold-500: #E8A93A;
-  --gold-600: #C98F26;
-  --cream-50: #E8E4D9;
-  --cream-100: #F2EEE4;
-  --beige-100: #EFEAE0;
-  --border-soft: #E2DCCB;
-  --ink-900: #1A1A17;
-  --ink-500: #6B6660;
-  --cream-text-soft: #D9C9A3;
-  --teal-legal: #8C9E8E;
-  
+  /* Brand Core Tokens — LumaBuild Architectural Studio (Pure White & Obsidian Palette) */
+  /* Pure White Canvas & Crisp Modern Slates (0% Yellow) */
+  --color-white: #ffffff;
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #090d16;
+
+  /* Accent: Refined Architectural Warm Amber / Brass */
+  --accent-600: #b45309;
+  --accent-500: #d97706;
+  --accent-400: #f59e0b;
+  --accent-100: #fef3c7;
+  --accent-50:  #fffbeb;
+
   /* Semantic Aliases */
-  --color-primary: var(--teal-900);
-  --color-primary-mid: var(--teal-700);
-  --color-accent: var(--gold-500);
-  --color-accent-hover: var(--gold-600);
-  --color-background: var(--cream-50);
-  --color-background-alt: var(--beige-100);
-  --color-surface: var(--cream-100);
-  --color-border: var(--border-soft);
-  --color-icon-circle: var(--teal-100);
-  --color-text: var(--ink-900);
-  --color-text-muted: var(--ink-500);
-  --color-teal-text: var(--cream-text-soft);
-  
-  /* Header & Footer Colors */
-  --color-header-bg: var(--teal-900);
-  --color-footer-bg: var(--teal-900);
-  --color-footer-text: var(--cream-text-soft);
+  --color-primary: var(--color-slate-900);
+  --color-primary-dark: var(--color-slate-950);
+  --color-primary-mid: var(--color-slate-800);
+  --color-primary-hover: var(--color-slate-700);
+  --color-primary-soft: var(--color-slate-100);
+
+  --color-accent: var(--accent-500);
+  --color-accent-hover: var(--accent-600);
+  --color-accent-soft: var(--accent-100);
+  --color-accent-badge: var(--color-slate-100);
+  --color-accent-badge-text: var(--color-slate-900);
+
+  --color-background: var(--color-white);
+  --color-background-alt: var(--color-slate-50);
+  --color-surface: var(--color-white);
+  --color-surface-glass: rgba(255, 255, 255, 0.85);
+  --color-border: var(--color-slate-200);
+  --color-border-subtle: var(--color-slate-100);
+  --color-icon-circle: var(--color-slate-100);
+  --color-text: var(--color-slate-900);
+  --color-text-muted: var(--color-slate-500);
+  --color-text-light: var(--color-slate-400);
+
+  /* Header & Footer Theme (Deep Obsidian Black) */
+  --color-header-bg: var(--color-slate-950);
+  --color-header-text: #ffffff;
+  --color-header-link: #94a3b8;
+  --color-header-link-hover: #ffffff;
+  --color-footer-bg: var(--color-slate-950);
+  --color-footer-text: #ffffff;
+  --color-footer-muted: #94a3b8;
+  --color-footer-subtle: #475569;
+
+  /* Motion & Spring Easing */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   
   /* Typography */
   --font-heading: 'Playfair Display', Georgia, serif;

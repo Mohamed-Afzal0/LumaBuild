@@ -65,7 +65,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({
           align-items: center;
           justify-content: center;
           gap: 28px;
-          background: radial-gradient(circle at 50% 40%, #16311a 0%, #0b1a0d 65%, #070f08 100%);
+          background: radial-gradient(circle at 50% 40%, #1e293b 0%, #0f172a 60%, #090d16 100%);
           transition: opacity 0.5s ease, visibility 0.5s ease;
         }
         .lb-loader--exit {
@@ -88,7 +88,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({
           position: absolute;
           inset: 0;
           border-radius: 22px;
-          border: 1.5px solid rgba(139, 214, 149, 0.35);
+          border: 1.5px solid rgba(217, 119, 6, 0.35);
           animation: lb-pulse 2.2s ease-out infinite;
         }
         .lb-ring.lb-ring-2 { animation-delay: 0.7s; }
@@ -105,11 +105,11 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({
           width: 60px;
           height: 60px;
           border-radius: 16px;
-          background: #112712;
+          background: #090d16;
           box-shadow:
-            0 0 0 1px rgba(139, 214, 149, 0.25),
-            0 8px 24px rgba(0, 0, 0, 0.45),
-            0 0 30px rgba(90, 200, 120, 0.15);
+            0 0 0 1px rgba(255, 255, 255, 0.12),
+            0 12px 32px rgba(0, 0, 0, 0.6),
+            0 0 30px rgba(217, 119, 6, 0.2);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -165,7 +165,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({
           font-weight: 600;
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: rgba(226, 240, 228, 0.85);
+          color: #ffffff;
           opacity: 0;
           animation: lb-fade-in 0.6s ease-out 0.35s forwards;
         }
@@ -183,7 +183,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({
         .lb-progress-fill {
           height: 100%;
           border-radius: 999px;
-          background: linear-gradient(90deg, #4f8f57, #a4e2ab);
+          background: linear-gradient(90deg, #d97706, #f59e0b);
           transition: width 0.15s linear;
         }
       `}</style>
