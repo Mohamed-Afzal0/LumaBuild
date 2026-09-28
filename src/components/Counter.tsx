@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useLoading } from "../context/LoadingContext";
 
 interface CounterProps {
   target: number;
@@ -22,40 +23,58 @@ const Counter = ({
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const hasAnimated = useRef(false);
+  const { isReady } = useLoading();
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true;
-          const startTime = performance.now();
+    // Wait until loading screen has finished and ready signal is active
+    if (!isReady) return;
+    const el = ref.current;
+    if (!el) return;
 
-          const animate = (currentTime: number) => {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const current = eased * target;
-            setCount(current);
+    const startAnimation = () => {
+      if (hasAnimated.current) return;
+      hasAnimated.current = true;
+      const startTime = performance.now();
 
-            if (progress < 1) {
-              requestAnimationFrame(animate);
-            } else {
-              setCount(target);
-            }
-          };
+      const animate = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = eased * target;
+        setCount(current);
 
+        if (progress < 1) {
           requestAnimationFrame(animate);
+        } else {
+          setCount(target);
         }
-      },
-      { threshold: 0.3 }
-    );
+      };
 
-    if (ref.current) {
-      observer.observe(ref.current);
+      requestAnimationFrame(animate);
+    };
+
+    const rect = el.getBoundingClientRect();
+    const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (inViewport) {
+      // Synchronize nicely with stats container reveal animation
+      const timer = setTimeout(startAnimation, 140);
+      return () => clearTimeout(timer);
     }
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          startAnimation();
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(el);
     return () => observer.disconnect();
-  }, [target, duration]);
+  }, [isReady, target, duration]);
 
   const formatted =
     decimals > 0 ? count.toFixed(decimals) : Math.floor(count).toString();

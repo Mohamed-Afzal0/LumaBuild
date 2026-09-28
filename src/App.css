@@ -2,3 +2,35 @@
   margin: 0 auto;
   padding: 0;
 }
+
+/* Scroll lock when loading screen is active */
+html.loading-lock,
+body.loading-lock {
+  overflow: hidden !important;
+  height: 100% !important;
+  max-height: 100vh !important;
+  touch-action: none !important;
+  -webkit-overflow-scrolling: auto !important;
+}
+
+/* App wrapper container during and after loading */
+.app-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-wrapper--loading {
+  max-height: 100vh !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+.app-wrapper--ready {
+  max-height: none;
+  overflow: visible;
+  pointer-events: auto;
+  user-select: auto;
+}

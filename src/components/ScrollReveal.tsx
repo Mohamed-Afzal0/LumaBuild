@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useLoading } from "../context/LoadingContext";
 
 interface ScrollRevealProps {
   children: ReactNode;
@@ -17,8 +18,12 @@ const ScrollReveal = ({
 }: ScrollRevealProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const { isReady } = useLoading();
 
   useEffect(() => {
+    // Wait until the loading screen has completely left and isReady is signaled
+    if (!isReady) return;
+
     const el = ref.current;
     if (!el) return;
 
@@ -41,7 +46,7 @@ const ScrollReveal = ({
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [delay]);
+  }, [isReady, delay]);
 
   return (
     <div

@@ -30,6 +30,47 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({
   const [exiting, setExiting] = useState(false);
 
   useEffect(() => {
+    // Lock scroll and prevent accidental scrolling during the loading screen
+    document.body.classList.add("loading-lock");
+    document.documentElement.classList.add("loading-lock");
+
+    const preventScroll = (e: Event) => {
+      e.preventDefault();
+    };
+
+    const preventScrollKeys = (e: KeyboardEvent) => {
+      const scrollKeys = [
+        "Space",
+        "PageUp",
+        "PageDown",
+        "End",
+        "Home",
+        "ArrowLeft",
+        "ArrowUp",
+        "ArrowRight",
+        "ArrowDown",
+      ];
+      if (scrollKeys.includes(e.code) || scrollKeys.includes(e.key)) {
+        e.preventDefault();
+      }
+    };
+
+    window.addEventListener("wheel", preventScroll, { passive: false });
+    window.addEventListener("touchmove", preventScroll, { passive: false });
+    window.addEventListener("keydown", preventScrollKeys, { passive: false });
+
+    window.scrollTo(0, 0);
+
+    return () => {
+      document.body.classList.remove("loading-lock");
+      document.documentElement.classList.remove("loading-lock");
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
+      window.removeEventListener("keydown", preventScrollKeys);
+    };
+  }, []);
+
+  useEffect(() => {
     const start = performance.now();
     let raf: number;
 
@@ -56,6 +97,15 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({
       aria-label="Loading LumaBuild"
     >
       <style>{`
+        html.loading-lock,
+        body.loading-lock {
+          overflow: hidden !important;
+          height: 100% !important;
+          max-height: 100vh !important;
+          touch-action: none !important;
+          -webkit-overflow-scrolling: auto !important;
+        }
+
         .lb-loader {
           position: fixed;
           inset: 0;

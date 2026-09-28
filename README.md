@@ -20,7 +20,7 @@ A modern, high-performance concept website designed for an architectural interio
 <br />
 
 <!-- Live Demo Buttons -->
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Website-2ea44f?style=for-the-badge&logo=vercel)](https://lumabuild.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Website-2ea44f?style=for-the-badge&logo=vercel)](https://luma-build-snowy.vercel.app/)
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/Mohamed-Afzal0/LumaBuild)
 
 </div>
