@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './components.css';
 import logo from '../assets/logo.svg';
+import { siteConfig } from '../data/siteConfig';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -71,40 +72,22 @@ const Header = () => {
 
       {/* Brand Logo & Name - Stays fixed in header */}
       <div className="logo-container">
-        <a className="logo" href="/" aria-label="LumaBuild home">
-          <img src={logo} alt="LumaBuild" height="30" width="30" />
+        <a className="logo" href="/" aria-label={`${siteConfig.brandName} home`}>
+          <img src={logo} alt={siteConfig.brandName} height="30" width="30" />
         </a>
-        <span className="logo-text">LumaBuild</span>
+        <span className="logo-text">{siteConfig.brandName}</span>
       </div>
 
       {/* Desktop Navigation */}
       <nav className="nav desktop-nav">
         <ul className="nav-list">
-          <li className="nav-item">
-            <a href="#home" className="nav-link">
-              Home
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#services" className="nav-link">
-              Services
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#projects" className="nav-link">
-              Projects
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#about" className="nav-link">
-              About
-            </a>
-          </li>
-          <li className="nav-item">
-            <a href="#contact" className="nav-link">
-              Contact
-            </a>
-          </li>
+          {siteConfig.navLinks.map((link) => (
+            <li className="nav-item" key={link.label}>
+              <a href={link.href} className="nav-link">
+                {link.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
 
@@ -120,36 +103,14 @@ const Header = () => {
       >
         <div className="mobile-nav-content">
           <ul className="mobile-nav-list">
-            <li className="mobile-nav-item">
-              <a href="#home" className="mobile-nav-link" onClick={closeMenu}>
-                <span className="mobile-nav-num">01</span>
-                <span className="mobile-nav-label">Home</span>
-              </a>
-            </li>
-            <li className="mobile-nav-item">
-              <a href="#services" className="mobile-nav-link" onClick={closeMenu}>
-                <span className="mobile-nav-num">02</span>
-                <span className="mobile-nav-label">Services</span>
-              </a>
-            </li>
-            <li className="mobile-nav-item">
-              <a href="#projects" className="mobile-nav-link" onClick={closeMenu}>
-                <span className="mobile-nav-num">03</span>
-                <span className="mobile-nav-label">Projects</span>
-              </a>
-            </li>
-            <li className="mobile-nav-item">
-              <a href="#about" className="mobile-nav-link" onClick={closeMenu}>
-                <span className="mobile-nav-num">04</span>
-                <span className="mobile-nav-label">About</span>
-              </a>
-            </li>
-            <li className="mobile-nav-item">
-              <a href="#contact" className="mobile-nav-link" onClick={closeMenu}>
-                <span className="mobile-nav-num">05</span>
-                <span className="mobile-nav-label">Contact</span>
-              </a>
-            </li>
+            {siteConfig.navLinks.map((link) => (
+              <li className="mobile-nav-item" key={link.label}>
+                <a href={link.href} className="mobile-nav-link" onClick={closeMenu}>
+                  <span className="mobile-nav-num">{link.num || ""}</span>
+                  <span className="mobile-nav-label">{link.label}</span>
+                </a>
+              </li>
+            ))}
           </ul>
 
           <div className="mobile-nav-footer">
@@ -161,8 +122,8 @@ const Header = () => {
               Book a consultation
             </a>
             <div className="mobile-contact-info">
-              <p className="mobile-contact-email">hello@lumabuild.example</p>
-              <p className="mobile-contact-meta">Mon to Fri, 9:00 - 17:00</p>
+              <p className="mobile-contact-email">{siteConfig.contact.email}</p>
+              <p className="mobile-contact-meta">{siteConfig.contact.hours}</p>
             </div>
           </div>
         </div>
